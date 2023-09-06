@@ -46,7 +46,7 @@ export default function FaceSelector() {
   const defaultPositionButtonRef = useRef(null);
 
   useEffect(() => {
-    async function doStuff() {
+    async function setListenersAndDraw() {
       const mainProgram = await createMainProgram(
         gl,
         mainVertexShaderSrc,
@@ -281,7 +281,7 @@ export default function FaceSelector() {
         reader.readAsArrayBuffer(file);
       });
     }
-    doStuff();
+    setListenersAndDraw();
   }, []);
 
   return (
