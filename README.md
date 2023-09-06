@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# face_highlighter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).  
 
-## Available Scripts
+React version of WebGL app for selecting and highlighting faces of models in STL format.
 
-In the project directory, you can run:
+It is meant to be integrated into a CAD tool. It will be used to select and save faces of 3D models of STL file format. I originally did this in OpenGL and then using google I redid it in WebGL as it is needed for a browser based tool that will be done in REACT.  
 
-### `npm start`
+Instead of doing everything in JavaScript though I learned enough emscripten to have a C++ class take the picked VertexID passed to it and do the work for calculating which faces/vertices have been previously selected or saved and which to display for the picked faces based upon how much relative tolerance to allow between the difference in normals of adjacent triangles. The C++ class uses glm and helper structs/functions.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+That same C++ class also uses assimp to load the file which is passed to it as an array from a FileReader in JavaScript. I may change this though as assimp in emscripten does not seem to like binary stl files that are roughly a million triangles or more ( in my code anyways ), and I may checkout how threejs loads them.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Still evolving this while getting the bugs out. The video begins demoing viewer and then demos the picking.
 
-### `npm test`
+For time being, only keys are being used to re-position model:  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Arrow keys for rotating.  
+* 'q' makes model larger  
+* 'e' makes model smaller  
+* 'w' lowers the model  
+* 's' elevates the model  
+* 'a' moves model right  
+* 'd' moves model left  
+  
+To use as a component, copy FaceSelector directory and paste it into your REACT app's src directory then copy the textures directory and the module.wasm file from the public directory and paste those into your public directory. After which `import FaceSelector from "./FaceSelector"` in the file where you want to use it.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://github.com/sethvan/face_highlighter/assets/78233173/9ed3a593-ab67-4b79-9c2b-e25386bf4596
