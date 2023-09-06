@@ -1,9 +1,9 @@
-import FaceSelector from "./FaceSelector";
+import FaceHighlighter from "./FaceHighlighter";
 
 export default function App() {
   return (
     <>
-      <FaceSelector />
+      <FaceHighlighter />
     </>
   );
 }

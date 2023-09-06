@@ -22,6 +22,11 @@ For time being, only keys are being used to re-position model:
 * 'a' moves model right  
 * 'd' moves model left  
   
-To use as a component, copy FaceSelector directory and paste it into your REACT app's src directory then copy the textures directory and the module.wasm file from the public directory and paste those into your public directory. After which `import FaceSelector from "./FaceSelector"` in the file where you want to use it.
+To use as a component 
+
+* copy FaceSelector directory and paste it into your REACT app's src directory
+* copy the textures directory and the module.wasm file from the public directory and paste those into your public directory
+* `npm install gl-matrix`
+* `import FaceHighlighter from "./FaceHighlighter"` in the file where you want to use it.
 
 https://github.com/sethvan/face_highlighter/assets/78233173/9ed3a593-ab67-4b79-9c2b-e25386bf4596
