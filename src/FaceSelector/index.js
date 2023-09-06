@@ -30,6 +30,7 @@ import {
   Scalar,
   setToDefaultPosition,
 } from "./helperCode/funcs.js";
+import "./index.css";
 import Module from "./helperCode/module.js";
 const { mat4 } = require("gl-matrix");
 
