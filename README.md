@@ -1,8 +1,8 @@
-# face_highlighter
+# face_highlighter_REACT
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).  
 
-React version of WebGL app for selecting and highlighting faces of models in STL format.
+React version of original [WebGL app](https://github.com/sethvan/face_highlighter) for selecting and highlighting faces of models in STL format.
 
 It is meant to be integrated into a CAD tool. It will be used to select and save faces of 3D models of STL file format. I originally did this in OpenGL and then using google I redid it in WebGL as it is needed for a browser based tool that will be done in REACT.  
 
