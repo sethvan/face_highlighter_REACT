@@ -22,7 +22,7 @@ For time being, only keys are being used to re-position model:
 * 'a' moves model right  
 * 'd' moves model left  
   
-To use as a component 
+To use as a component  
 
 * copy FaceSelector directory and paste it into your REACT app's src directory
 * copy the textures directory and the module.wasm file from the public directory and paste those into your public directory
