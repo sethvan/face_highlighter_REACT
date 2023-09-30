@@ -4,13 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 React version of original [WebGL app](https://github.com/sethvan/face_highlighter) for selecting and highlighting faces of models in STL format.
 
-It is meant to be integrated into a CAD tool. It will be used to select and save faces of 3D models of STL file format. I originally did this in OpenGL and then using google I redid it in WebGL as it is needed for a browser based tool that will be done in REACT.  
+It is meant to be integrated into a CAD tool. It will be used to select and save faces of 3D models of STL file format. I originally did this in OpenGL and then redid it in WebGL as it will be implemented as part of a browser based tool using REACT.
 
 Instead of doing everything in JavaScript though I learned enough emscripten to have a C++ class take the picked VertexID passed to it and do the work for calculating which faces/vertices have been previously selected or saved and which to display for the picked faces based upon how much relative tolerance to allow between the difference in normals of adjacent triangles. The C++ class uses glm and helper structs/functions.  
 
-That same C++ class also uses assimp to load the file which is passed to it as an array from a FileReader in JavaScript. I may change this though as assimp in emscripten does not seem to like binary stl files that are roughly a million triangles or more ( in my code anyways ), and I may checkout how threejs loads them.  
-
-Still evolving this while getting the bugs out. The video begins demoing viewer and then demos the picking.
+That same C++ class also uses assimp to load the file which is passed to it as an array from a FileReader in JavaScript. The video begins demoing viewer and then demos the picking. The video begins demoing viewer and then demos the picking.
 
 For time being, only keys are being used to re-position model:  
 
