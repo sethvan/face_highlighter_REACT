@@ -17,6 +17,7 @@ void main()
 `;
 
 const pickingFragmentShaderSrc = `#version 300 es
+precision highp int;
 
 flat in uint myVertexID;
 out uvec4 FragColor;
